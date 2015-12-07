@@ -22,5 +22,6 @@
     "heroku",
     "express"
   ],
+  "kerberos": "~0.0.17",	
   "license": "MIT"
 }

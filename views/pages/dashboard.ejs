@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/header %>
+
+    <!--script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textEdit' });</script-->
+</head>
+<body>
+	<br>
+	<center>
+		<% include ../partials/menu %>	
+		<br>
+		<% blogs.forEach(function(user){ %>
+		<div class="item" style="width: 70%">
+			<div class="content">
+	  			<a href="/blog/<%= user.Url %>"><p class="header" style="text-align: start; font-size: 30px"><%= user.Title %></p></a>
+	  			<div class="description" style="text-align: start">
+	    			<p><%= user.Description %></p>
+	    			<br>
+	    			Category: <%= user.Category %><br>
+					Created: <%= user.Date %>
+	  			</div>
+	  			<br>
+				<div class="extra" style="text-align: start">
+					<div class="ui two column grid">
+						<div class="row">
+							<div class="column">
+								<a href="/makePost/<%= user.Url %>"><i class="plus icon"></i>Add Post</a>
+							</div>
+							<div class="column">
+								<form action="/processDeleteBlog" method="POST">
+									<input type="text" value="<%= user.Url %>" name="url" style="display: none">
+									<button class="ui labeled icon button" type="submit"><i class="trash icon"></i>Delete Blog</button>
+								</form>	
+							</div>
+						</div>
+					</div>	
+			    </div>
+			</div>
+		</div>
+		<div class="ui section divider" style="width: 70%"></div>
+		<br>	
+		<% }) %>
+	</center>	
+	<br>
+	<br>
+
+</body>
+</html>	

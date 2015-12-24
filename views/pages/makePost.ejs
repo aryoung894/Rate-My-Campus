@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../semantic/out/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+
+	<script src="../semantic/out/jquery-1.11.3.min.js"></script>
+	<script src="../semantic/out/semantic.min.js"></script>
+	<script src="https://cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ 
+    	selector:'#textEdit',
+    	width: 800,
+        encoding: 'html'
+    });</script>
+
+</head>
+<body>
+	<br>
+	<center>
+        <% include ../partials/menu %>
+        <br>
+        <h1> Write a Post for your Blog! </h1>
+        <br>
+        <br>
+        <form action="/processPost" data-ajax="false" method="POST" class="ui form">
+            <div class="field" style="width: 800px">
+                <label style="text-align: start">Title</label>
+                <input type="text" name="title" placeholder="Create Title">
+            </div>
+            <br>
+            <div class="field" style="width: 800px">
+            	 <label style="text-align: start">Content of Post</label>
+                <div id="textEdit" type="text/html"></div>
+            </div>
+            <div class="field" style="display: none">
+                 <input type="text" name="blogUrl" value="<%= param %>">
+            </div>
+            <button class="ui button" style="float: left" type="submit">Create</button>
+        </form>	
+    </center>
+</body>
+</hmtl>        

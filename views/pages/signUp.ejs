@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/header %>
+</head>
+<body>
+    <center>
+        <br>
+        <h1>Sign Up Page</h1>
+        <br>
+        <br>
+        <form action="/processSignUp" data-ajax="false" method="POST" class="ui form" style="width: 50%">
+            <div class="field">
+                <label style="text-align: start">Enter Email</label>
+                <input type="text" name="email" placeholder="Email">
+            </div>
+            <div class="field">
+                <label style="text-align: start">Enter Password</label>
+                <input type="password" name="password">
+            </div>
+            <div class="field">
+                <label style="text-align: start">Confirm Password</label>
+                <input type="password" name="confirm">
+            </div>
+            <button class="ui button" style="float: left" type="submit">Submit</button>
+            <a class="ui button" style="float: left" href="/">Back</a>
+        </form>
+        <%= errMsg %>
+        
+    </center>
+</body>
+</html>        

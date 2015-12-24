@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../semantic/out/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+
+	<script src="../semantic/out/jquery-1.11.3.min.js"></script>
+	<script src="../semantic/out/semantic.min.js"></script>
+</head>
+<body>
+	<br>
+	<center>
+        <div class="ui menu" style="width: 90%; display: <%= post.display %>">
+			<a href="/dashboard" class="header item">
+				<i class="user icon"></i>My Dashboard
+			</a>
+		   <a class="item" href="/makeBlog">
+		     <i class="edit icon"></i>Make Blog
+		   </a>
+			<a class="item">
+    			<i class="list layout icon"></i>Posts
+   			</a>
+		</div>
+		<div class="ui segment" style="width: 70%">
+			<div class="content">
+	  			<p class="header" style="text-align: start; font-size: 30px"><%= post.post.Title %></p>
+	  			<div class="description" style="text-align: start">
+	    			<%= post.post.Content %>
+	    			<br>
+					Created: <%= post.post.Date %>
+	  			</div>
+	  			<br>
+			</div>
+		</div>
+	</center>
+</body>
+</hmtl>		

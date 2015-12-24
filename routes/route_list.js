@@ -1,6 +1,5 @@
 var models = require('../models');
 var mongoose = require('mongoose');
-var HashMap = require('hashmap');
 
 exports.loginpage = function(req, res){
 	res.render('pages/index');
@@ -25,7 +24,6 @@ exports.goToDash = function(req, res){
 }
 
 exports.displayBlog = function(req, res){
-	var map = new HashMap();
 	var displayFlag;
 	console.log("Hello");
 	if(req.session.logged){

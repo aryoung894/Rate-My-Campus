@@ -25,7 +25,7 @@ exports.goToDash = function(req, res){
 
 exports.displayBlog = function(req, res){
 	var displayFlag;
-	console.log("Hello");
+	var url = req.params[0];
 	if(req.session.logged){
 		displayFlag = 'flex';
 	}
@@ -39,7 +39,8 @@ exports.displayBlog = function(req, res){
 	function getPostData(err, urlMatch){
 		var data = {
 			"display": displayFlag,
-			"array": urlMatch[0].Posts
+			"array": urlMatch[0].Posts,
+			"blogURL": url
 		};
 		res.render('pages/blogPage', {posts: data});
 	}
@@ -50,7 +51,6 @@ exports.makePostPage = function(req, res){
 }
 
 exports.viewPostPage = function(req, res){
-	var blogModel = mongoose.model('Blog', models.BlogSchema);
 	var displayFlag;
 	if(req.session.logged){
 		displayFlag = 'flex';

@@ -17,8 +17,8 @@
 		   <a class="item" href="/makeBlog">
 		     <i class="edit icon"></i>Make Blog
 		   </a>
-			<a class="item">
-    			<i class="list layout icon"></i>Posts
+			<a href="/processSignOut" class="item">
+    			<i class="power icon"></i>Logout
    			</a>
 		</div>
 		<% posts.array.forEach(function(post){ %>
@@ -42,7 +42,11 @@
 								<a href="/viewPost/<%= post.Url %>">Go to Post</a>
 							</div>
 							<div class="column">
-								<a href="/processDeletePost"><i class="trash icon">Delete Post</i></a>
+								<form action="/processDeletePost" method="POST">
+									<input type="text" value="<%= post.Url %>" name="url" style="display: none">
+									<input type="text" value="<%= posts.blogURL %>" name="blogUrl" style="display: none">
+									<button class="ui labeled icon button" type="submit"><i class="trash icon"></i>Delete Post</button>
+								</form>
 							</div>	
 						</div>
 					</div>	

@@ -14,6 +14,8 @@ var processSignUp = require('./processing/processSignUp');
 var processBlog = require('./processing/processBlog');
 var processPost = require('./processing/processPost');
 var processDeleteBlog = require('./processing/processDeleteBlog');
+var processDeletePost = require('./processing/processDeletePost');
+var processSignOut = require('./processing/processSignOut');
 
 var getRoute = require('./routes/route_list');
 
@@ -39,8 +41,10 @@ app.get('/dashboard', getRoute.goToDash);
 app.get('/blog/*', getRoute.displayBlog);
 app.get('/makePost/*', getRoute.makePostPage);
 app.get('/viewPost/*', getRoute.viewPostPage);
+app.get('/processSignOut', processSignOut.signOut);
 
 app.post('/processDeleteBlog', processDeleteBlog.deleteBlog);
+app.post('/processDeletePost', processDeletePost.deletePost);
 app.post('/processBlog', processBlog.create);
 app.post('/processLogin', processLogin.authenticate);
 app.post('/processSignUp', processSignUp.signup);

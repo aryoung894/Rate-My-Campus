@@ -1,3 +1,25 @@
+@font-face{
+	font-family: Ailerons;
+	src: url('Ailerons-Typeface.otf');
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    padding-bottom: 1px;
+    background-color: #3B5998;    
+}
+
+h1{
+	font-family: Ailerons;
+	font-size: 3.5rem;
+	color: white;
+	border: 1px;
+}
+
 a{
   text-decoration: none;
   color: black;

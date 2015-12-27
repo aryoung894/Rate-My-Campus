@@ -4,27 +4,29 @@
     <% include ../partials/header %>
 </head>
 <body>
-    <center>
-        <br>
-        <h1>Welcome to BlogMo</h1>
-        <h3>Explore your thoughts</h3>
-        <br>
-        <br>
-        <form action="/processLogin" data-ajax="false" method="POST" class="ui form" style="width: 50%">
-            <div class="field">
-                <label style="text-align: start">Email</label>
-                <input type="text" name="email" placeholder="Email">
-            </div>
-            <div class="field">
-                <label style="text-align: start">Password</label>
-                <input type="password" name="password" placeholder="Password">
-            </div>
+    <div style="padding-top: 10%">
+        <center>
+            <br>
+            <h1>Welcome to BlogMo</h1>
+            <h3 style="color: white">Explore your thoughts</h3>
             <br>
             <br>
-            <button class="ui button" style="float: left; background-color: #DDDAD6; width: 50%;" type="submit">Submit</button>
-            <a class="ui button" style="float: right; background-color: #DDDAD6; width: 45%;" href="signup">Sign Up</a>
-        </form>
-
-    </center>
+            <form action="/processLogin" data-ajax="false" method="POST" class="ui form" style="width: 50%">
+                <div class="field">
+                    <label class="formField">Email</label>
+                    <input type="text" name="email" placeholder="Email">
+                </div>
+                <br>
+                <div class="field">
+                    <label class="formField">Password</label>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <br>
+                <br>
+                <button class="ui button posButtons" style="float: left; width: 50%" type="submit">Submit</button>
+                <a class="ui button" style="float: right; background-color: #DDDAD6; width: 45%;" href="signup">Sign Up</a>
+            </form>
+        </center>
+    </div>
 </body>
 </html>

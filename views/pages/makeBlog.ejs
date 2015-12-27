@@ -10,21 +10,26 @@
         <h1>Make a Blog!</h1>
         <br>
         <br>
+        <br>
         <form action="/processBlog" data-ajax="false" method="POST" class="ui form" style="width: 50%">
             <div class="field">
-                <label style="text-align: start">Title</label>
+                <label class="formField">Title</label>
                 <input type="text" name="title" placeholder="Create Title">
             </div>
+            <br>
             <div class="field">
-                <label style="text-align: start">Category</label>
+                <label class="formField">Category</label>
                 <input type="text" name="category" placeholder="Pick a Category">
             </div>
+            <br>
             <div class="field">
-                <label style="text-align: start">Description</label>
+                <label class="formField">Description</label>
                 <textarea name="description"></textarea>
             </div>
+            <br>
             <div style="display: none"></div>
-            <button class="ui button" style="float: left" type="submit">Create</button>
+            <br>
+            <button class="ui button posButtons" style="float: left" type="submit">Create</button>
         </form>
     </center>
 </body>

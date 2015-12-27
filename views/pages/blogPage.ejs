@@ -24,14 +24,13 @@
 		<% posts.array.forEach(function(post){ %>
 		<div class="ui segment" style="width: 70%">
 			<div class="content">
-	  			<p class="header" style="text-align: start; font-size: 30px"><%= post.Title %></p>
+	  			<p class="header" style="text-align: start; font-size: 50px; margin-bottom: 0.75rem"><%= post.Title %></p>
 	  			<div class="description" style="text-align: start">
 	    			<div id="<%= post.Url %>"></div>
 	    			<script type="text/javascript">
 	    				var data = <%- JSON.stringify(post) %>
 						$('#' + data.Url).html(data.Content);
 					</script>
-	    			<br>
 					Created: <%= post.Date %>
 	  			</div>
 	  			<br>
@@ -39,13 +38,13 @@
 					<div class="ui two column grid">
 						<div class="row">
 							<div class="column">
-								<a class="ui labeled icon button" href="/viewPost/<%= post.Url %>"><i class="arrow right icon"></i>Go to Post</a>
+								<a class="ui labeled icon button posButtons" href="/viewPost/<%= post.Url %>"><i class="arrow right icon"></i>Go to Post</a>
 							</div>
 							<div class="column">
 								<form action="/processDeletePost" method="POST">
 									<input type="text" value="<%= post.Url %>" name="url" style="display: none">
 									<input type="text" value="<%= posts.blogURL %>" name="blogUrl" style="display: none">
-									<button class="ui labeled icon button" type="submit"><i class="trash icon"></i>Delete Post</button>
+									<button class="ui labeled icon button negButtons" type="submit"><i class="trash icon"></i>Delete Post</button>
 								</form>
 							</div>	
 						</div>

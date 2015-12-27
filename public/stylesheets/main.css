@@ -25,3 +25,35 @@ a{
   color: black;
 }
 
+.formField{
+	text-align: start !important; 
+	color: white !important; 
+	font-size: 1.5rem !important
+}
+
+.posButtons{
+	 background-color: #7EC2AA !important; 
+	 color: #e5f2ff !important;
+	 font-size: 1.1rem !important;
+}
+
+.negButtons{
+	background-color: #E05151 !important;
+	color: #e5f2ff !important;
+	font-size: 1.1rem !important;
+}
+
+/**
+  * This is for the dashboard elements
+  */
+
+#blogTitle{
+	text-align: start; 
+	font-size: 50px; 
+	color: white
+}
+
+#blogTitle:hover{
+	color: #7EC2AA !important; 
+}  
+

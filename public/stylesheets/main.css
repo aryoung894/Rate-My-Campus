@@ -13,7 +13,7 @@ body, html{
     background-color: #3B5998;    
 }
 
-h1{
+.title{
 	font-family: Ailerons;
 	font-size: 3.5rem;
 	color: white;

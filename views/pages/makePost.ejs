@@ -10,7 +10,12 @@
     <script>tinymce.init({ 
     	selector:'#textEdit',
     	width: 800,
-        encoding: 'html'
+        encoding: 'html',
+        plugins: "link image",
+        fontsize_formats: "8pt 9pt 10pt 11pt 12pt 26pt 36pt",
+        toolbar: 
+            "undo redo pastetext | bold italic | alignleft aligncenter alignright | fontselect | fontsizeselect | numlist | bullist | link image"
+         
     });</script>
 
 </head>

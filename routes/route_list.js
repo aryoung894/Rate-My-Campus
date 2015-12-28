@@ -2,11 +2,20 @@ var models = require('../models');
 var mongoose = require('mongoose');
 
 exports.loginpage = function(req, res){
-	res.render('pages/index');
+	var err = {
+		"msg": "",
+		"display": 'none'
+	}
+
+	res.render('pages/index', {errMsg: err});
 }
 
 exports.signUpPage = function(req, res){
-	res.render('pages/signUp', { errMsg: '' });
+	var err = {
+        "msg": "",
+        "display": 'none' 
+  	};
+	res.render('pages/signUp', { errMsg: err });
 }
 
 exports.makeBlogPage = function(req, res){

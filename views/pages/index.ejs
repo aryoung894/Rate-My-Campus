@@ -21,11 +21,17 @@
                     <label class="formField">Password</label>
                     <input type="password" name="password" placeholder="Password">
                 </div>
-                <br>
+                
                 <br>
                 <button class="ui button posButtons" style="float: left; width: 50%" type="submit">Submit</button>
                 <a class="ui button" style="float: right; background-color: #DDDAD6; width: 45%;" href="signup">Sign Up</a>
             </form>
+            <br>
+            <br>
+            <br>
+            <div class="ui tertiary inverted red segment" style="width: 50%; display: <%= errMsg.display %>">
+                <p><%= errMsg.msg %></p>
+            </div>
         </center>
     </div>
 </body>

@@ -5,14 +5,18 @@ var models = require('../models');
 
 exports.signup = function(req, res){
 	var form_data = req.body;
-  	console.log(form_data);
 
-  	// make a new Project and save it to the DB
+  // make a new Project and save it to the DB
   // YOU MUST send an OK response w/ res.send();
   var newPost = new models.Project({
     "email": form_data.email,
     "password": form_data.password
   });
+
+  var err = {
+        "msg": "",
+        "display": 'none' 
+  };
 
   models.Project
     .find({"email": newPost.email})
@@ -20,30 +24,42 @@ exports.signup = function(req, res){
 
     function unique(err, isUnique){
        if(typeof(isUnique[0]) == 'undefined'){
-        newPost.save(saving);
-          console.log("**************Case 1");
-       }
+            if(err){
+                res.render('pages/signup');
+            }
+            else if(form_data.password != form_data.confirm){
+              err = {
+                    "msg": "Password and Confirm Password do not match",
+                    "display": 'block'
+                };
+              res.render('pages/signup', {errMsg: err}); 
+            }
+            else if(form_data.password.length < 6){
+                err = {
+                    "msg": "Password is too short. Please make a password that is at least 6 characters long",
+                    "display": 'block'
+                };
+                res.render('pages/signup', {errMsg: err}); 
+            }
+            else{
+                newPost.save(function(){
+                    err = {
+                        "msg": "",
+                        "display": 'none' 
+                    };
+                    res.render('pages/index', {errMsg: err});
+                });
+            } 
+        }
           
        else{
-        res.render('pages/signup', {errMsg: "Email exists already. Please enter another one."});   
+        err = {
+            "msg": "Email exists already. Please enter another one.",
+            "display": 'block'
+        };
+
+        res.render('pages/signup', {errMsg: err});   
        }
              
     }
-  
-
-  function saving(err, newuser){
-    if(err){
-    	console.log(err);
-      
-    	res.render('pages/signup');
-    }
-    else if(form_data.password != form_data.confirm){
-      res.render('pages/signup', {errMsg: "Password and Confirm Password do not match"}); 
-    }
-    else{
-      
-    	res.render('pages/index');
-    } 
-    
-  }
 }

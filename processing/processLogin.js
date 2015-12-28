@@ -13,8 +13,11 @@ exports.authenticate = function(req, res){
 
 	function testMatchingEmail(err, emailMatch){
 		if((typeof(emailMatch[0]) == 'undefined') || err){
-			res.render('pages/index', {errMsg: "Wrong information or signup"});
-			console.log("Error");
+			var err = {
+				"msg": "Wrong information or you have not signed up",
+				"display": 'block'
+			};
+			res.render('pages/index', {errMsg: err});
 		}
 		else{
 			if((emailMatch[0].email == (""+userInput.email)) && (emailMatch[0].password == (""+userInput.password))){

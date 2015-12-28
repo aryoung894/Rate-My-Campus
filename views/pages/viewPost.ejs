@@ -23,18 +23,17 @@
 		</div>
 		<div class="ui segment" style="width: 70%">
 			<div class="content">
-	  			<p class="header" style="text-align: start; font-size: 30px"><%= post.post.Title %></p>
+	  			<p class="header" style="text-align: start; font-size: 50px; margin-bottom: 0rem"><%= post.post.Title %></p>
+	  			<div class="ui section divider"></div>
 	  			<div class="description" style="text-align: start">
 	    			<div id="contentID"></div>
-
 	    			<script type="text/javascript">
 	    				var data = <%- JSON.stringify(post.post) %>
 						$("#contentID").html(data.Content);
 					</script>
-	    			<br>
-					Created: <%= post.post.Date %>
 	  			</div>
-	  			<br>
+	  			<div class="ui section divider"></div>
+	  			<p style="text-align: start">Created: <%= post.post.Date %></p>
 			</div>
 		</div>
 	</center>

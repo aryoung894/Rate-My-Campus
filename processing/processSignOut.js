@@ -9,8 +9,13 @@ exports.signOut = function(req, res){
 		function signOutUser(err, user){
 			req.session.logged = false;
 
+			var err = {
+				"msg": "",
+				"display": 'none'
+			};
+
 			req.session.destroy(function(){
-				res.render('pages/index');
+				res.render('pages/index', {errMsg: err});
 			});
 		}
 }	

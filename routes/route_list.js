@@ -34,12 +34,15 @@ exports.goToDash = function(req, res){
 
 exports.displayBlog = function(req, res){
 	var displayFlag;
+	var flag;
 	var url = req.params[0];
 	if(req.session.logged){
 		displayFlag = 'flex';
+		flag = 'block';
 	}
 	else{
 		displayFlag = 'none';
+		flag = 'none';
 	}
 	models.Blog
 		.find({"Url": req.params[0]})
@@ -49,7 +52,9 @@ exports.displayBlog = function(req, res){
 		var data = {
 			"display": displayFlag,
 			"array": urlMatch[0].Posts,
-			"blogURL": url
+			"blogURL": url,
+			"show": flag,
+			"title": urlMatch[0].Title 
 		};
 		res.render('pages/blogPage', {posts: data});
 	}

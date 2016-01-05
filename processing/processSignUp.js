@@ -24,21 +24,21 @@ exports.signup = function(req, res){
     function unique(err, isUnique){
        if(typeof(isUnique[0]) == 'undefined'){
             if(err){
-                res.render('pages/signup', {errMsg: err});
+                res.render('pages/signUp', {errMsg: err});
             }
             else if(form_data.password != form_data.confirm){
               err = {
                     "msg": "Password and Confirm Password do not match",
                     "display": 'block'
               };
-              res.render('pages/signup', {errMsg: err}); 
+              res.render('pages/signUp', {errMsg: err}); 
             }
             else if(form_data.password.length < 6){
                 err = {
                     "msg": "Password is too short. Please make a password that is at least 6 characters long",
                     "display": 'block'
                 };
-                res.render('pages/signup', {errMsg: err}); 
+                res.render('pages/signUp', {errMsg: err}); 
             }
             else{
                 newPost.save(function(){
@@ -57,7 +57,7 @@ exports.signup = function(req, res){
             "display": 'block'
         };
 
-        res.render('pages/signup', {errMsg: err});   
+        res.render('pages/signUp', {errMsg: err});   
        }
              
     }

@@ -4,14 +4,15 @@
     <% include ../partials/header %>
 </head>
 <body>
-    <div style="padding-top: 10%">
+    <div class="backgroundImage">
+    <div style="padding-top: 10%; z-index: 50">
         <center>
             <br>
             <h1 class="title">Welcome to BlogMo</h1>
-            <h3 style="color: white">Explore your thoughts</h3>
+            <h3 style="color: white; font-size:2.5rem">Explore your thoughts</h3>
             <br>
             <br>
-            <form action="/processLogin" data-ajax="false" method="POST" class="ui form" style="width: 50%">
+            <form action="/processLogin" data-ajax="false" method="POST" class="ui form" style="width: 25%">
                 <div class="field">
                     <label class="formField">Email</label>
                     <input type="text" name="email" placeholder="Email">
@@ -24,15 +25,16 @@
                 
                 <br>
                 <button class="ui button posButtons" style="float: left; width: 50%" type="submit">Submit</button>
-                <a class="ui button" style="float: right; background-color: #DDDAD6; width: 45%;" href="signup">Sign Up</a>
+                <button class="ui button" style="float: right; background-color: #DDDAD6; width: 45%; font-size: 1.1rem"><a href="signup">Sign Up</a></button>
             </form>
             <br>
             <br>
             <br>
-            <div class="ui tertiary inverted red segment" style="width: 50%; display: <%= errMsg.display %>">
+            <div class="ui tertiary inverted red segment" style="width: 25%; display: <%= errMsg.display %>">
                 <p><%= errMsg.msg %></p>
             </div>
         </center>
+    </div>
     </div>
 </body>
 </html>

@@ -13,16 +13,24 @@ body, html{
     background-color: #3B5998;    
 }
 
+.backgroundImage{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-image: url('../blog.jpg');
+}
+
 .title{
 	font-family: Ailerons;
-	font-size: 4.5rem;
+	font-size: 5.5rem;
 	color: white;
 	border: 1px;
 }
 
 a{
-  text-decoration: none;
-  color: black;
+  text-decoration: none !important;
+  color: black !important;
 }
 
 .formField{

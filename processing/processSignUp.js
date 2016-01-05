@@ -31,7 +31,7 @@ exports.signup = function(req, res){
               err = {
                     "msg": "Password and Confirm Password do not match",
                     "display": 'block'
-                };
+              };
               res.render('pages/signup', {errMsg: err}); 
             }
             else if(form_data.password.length < 6){

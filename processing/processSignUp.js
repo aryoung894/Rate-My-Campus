@@ -1,6 +1,5 @@
 // Page to sign up for an account
-
-
+var mongoose = require('mongoose');
 var models = require('../models');
 
 exports.signup = function(req, res){
@@ -25,7 +24,7 @@ exports.signup = function(req, res){
     function unique(err, isUnique){
        if(typeof(isUnique[0]) == 'undefined'){
             if(err){
-                res.render('pages/signup');
+                res.render('pages/signup', {errMsg: err});
             }
             else if(form_data.password != form_data.confirm){
               err = {

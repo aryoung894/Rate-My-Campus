@@ -93,11 +93,15 @@ a{
 	}
 
 	#homeForm{
-		width: 60%;
+		width: 75%;
 	}
 
 	#homeDiv{
 		padding-top: 0%;
+	}
+
+	.h3{
+		font-size: 1.0rem !important;
 	}
  }	
 

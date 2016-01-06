@@ -12,7 +12,7 @@
             <h3 style="color: white; font-size:2.5rem">Explore your thoughts</h3>
             <br>
             <br>
-            <form action="/processLogin" data-ajax="false" method="POST" class="ui form" style="width: 25%">
+            <form action="/processLogin" data-ajax="false" method="POST" class="ui form" id="homeForm">
                 <div class="field">
                     <label class="formField">Email</label>
                     <input type="text" name="email" placeholder="Email">
@@ -24,8 +24,8 @@
                 </div>
                 
                 <br>
-                <button class="ui button posButtons" style="float: left; width: 50%" type="submit">Submit</button>
-                <button class="ui button" style="float: right; background-color: #DDDAD6; width: 45%; font-size: 1.1rem"><a href="signup">Sign Up</a></button>
+                <button class="ui button posButtons" style="float: left; width: 48%" type="submit">Submit</button>
+                <button class="ui button" id="signUpButton"><a href="signup">Sign Up</a></button>
             </form>
             <br>
             <br>

@@ -13,6 +13,17 @@ body, html{
     background-color: #3B5998;    
 }
 
+#homeForm{
+		width: 25%;
+}
+
+#signUpButton{
+	float: right; 
+	background-color: #DDDAD6; 
+	width: 45%; 
+	font-size: 1.1rem
+}
+
 .backgroundImage{
 	position: fixed;
 	width: 100%;
@@ -63,5 +74,26 @@ a{
 
 #blogTitle:hover{
 	color: #7EC2AA !important; 
-}  
+} 
+
+/**
+ * Media Queries
+ */
+ @media only screen and (max-device-width: 768px) {
+ 	.title{
+		font-family: Ailerons;
+		font-size: 3.5rem;
+		color: white;
+		border: 1px;
+	}
+
+	#homeForm{
+		width: 60%;
+	}
+
+	#signUpButton{
+
+	}
+ }	
+
 

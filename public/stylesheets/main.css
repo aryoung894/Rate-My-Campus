@@ -88,7 +88,7 @@ a{
  @media only screen and (max-device-width: 768px) {
  	.title{
 		font-family: Ailerons;
-		font-size: 3.5rem;
+		font-size: 3.0rem;
 		color: white;
 		border: 1px;
 	}
@@ -103,6 +103,14 @@ a{
 
 	.h3{
 		font-size: 1.0rem !important;
+	}
+
+	.posButtons{
+		font-size: 0.7rem !important;
+	}
+
+	.negButtons{
+		font-size: 0.7rem !important;
 	}
  }	
 
